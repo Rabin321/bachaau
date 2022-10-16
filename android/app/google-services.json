@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "373024675482",
+    "project_id": "bachaau-82cbf",
+    "storage_bucket": "bachaau-82cbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373024675482:android:0e40628f20183128107123",
+        "android_client_info": {
+          "package_name": "com.example.bachaau"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373024675482-ka4bt1cr51afj8jhfsu22hf37emgg8sb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKqSLipF0XzAlfRUzQfZ-63ha0VVOVUvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373024675482-ka4bt1cr51afj8jhfsu22hf37emgg8sb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
