@@ -18,9 +18,12 @@ class CustomAppBar extends StatelessWidget {
       // {
       //   onTap!();
       // },
-      child: Container(
-        child: Text(quoteslist[quoteIndex!],
-        style: const TextStyle(fontSize:20, fontWeight:FontWeight.w500, letterSpacing: 1 ),),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: Text(quoteslist[quoteIndex!],
+          style: const TextStyle(fontSize:20, fontWeight:FontWeight.w500, letterSpacing: 1 ),),
+        ),
       ),
     
     );

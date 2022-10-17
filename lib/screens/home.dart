@@ -1,5 +1,7 @@
+
 import 'dart:math';
 
+import 'package:bachaau/home_widgets/emergencycaro.dart';
 import 'package:bachaau/widgets/customappbar.dart';
 import 'package:bachaau/widgets/customcarousel.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +48,17 @@ getRandomQuote(){
             getRandomQuote();
            }
            ),
-           const CustomCarousel(),
+           Expanded(
+            child: ListView(
+              shrinkWrap: true,
+              children:const  [ 
+                 CustomCarousel(),
+                 Padding(
+                   padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                   child: Text("Emergency", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),),
+                 ),
+                 Emergency(),
+            ],)),
             ],
           ),
         ),
