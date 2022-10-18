@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // routes: {
       //   'mainhome': (context) => const Home(),
@@ -25,11 +25,14 @@ class MyApp extends StatelessWidget {
 
       // home: RegisterPage(),
       // home: const OnboardingScreen(), Everything works fine up to verify.(otp aairaxaina)
-      home: const Home() ,
+      home: const Home(),
 
-      theme: ThemeData(textTheme: GoogleFonts.firaSansTextTheme(Theme.of(context).textTheme,
-      ),
-      primarySwatch: Colors.blueGrey,
+      theme: ThemeData(
+        backgroundColor: Colors.green,
+        textTheme: GoogleFonts.firaSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        primarySwatch: Colors.blueGrey,
       ),
     );
   }

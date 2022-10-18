@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Police extends StatelessWidget {
-  const Police({super.key});
+class Ambulance extends StatelessWidget {
+  const Ambulance({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,9 @@ class Police extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: const LinearGradient(colors: [
-                Color.fromARGB(224, 59, 98, 121),
-                Color.fromARGB(115, 7, 118, 182),
-                // Color.fromARGB(115, 5, 105, 122),
+                Color.fromARGB(225, 108, 181, 223),
+                Color.fromARGB(115, 57, 148, 201),
+                Color.fromARGB(115, 5, 105, 122),
               ])),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class Police extends StatelessWidget {
                   radius: 30,
                   backgroundColor: Colors.white.withOpacity(0.5),
                   backgroundImage:
-                      Image.asset('assets/images/police.jpg').image,
+                      Image.asset('assets/images/ambulance.png').image,
                   // child:
                 ),
               ),

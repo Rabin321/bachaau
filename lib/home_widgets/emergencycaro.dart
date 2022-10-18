@@ -1,21 +1,166 @@
+import 'package:bachaau/home_widgets/emergencies/ambulance.dart';
 import 'package:bachaau/home_widgets/emergencies/police.dart';
+import 'package:bachaau/home_widgets/samplepolice.dart';
 import 'package:flutter/material.dart';
 
-class Emergency extends StatelessWidget {
+class Emergency extends StatefulWidget {
   const Emergency({super.key});
 
+  @override
+  State<Emergency> createState() => _EmergencyState();
+}
+
+class _EmergencyState extends State<Emergency> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 210,
       // height: MediaQuery.of(context).size.height/0.02,
-      child: ListView(
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        children: [
-          Police(),
-        ],
+      child: Expanded(
+        // flex: 2,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 12.0),
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            children: [
+              // Police(),
+              // Ambulance(),
+              EmergencyBox(
+                'assets/images/police1.jpg',
+                'Nepal Police',
+                '100',
+                () => const SamplePolice(),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+
+              EmergencyBox(
+                'assets/images/ambulance.png',
+                'Ambulance',
+                '100',
+                () => const SamplePolice(),
+              ),
+
+              EmergencyBox(
+                'assets/images/firebrigade.jpg',
+                'Fire Brigade',
+                '100',
+                () => const SamplePolice(),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// emergency boxes
+
+//function
+class EmergencyBox extends StatelessWidget {
+  final String image;
+  final String title;
+  final String subtitle;
+
+  final Function ontapfunction;
+
+  const EmergencyBox(this.image, this.title, this.subtitle, this.ontapfunction);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return ontapfunction();
+        }));
+      },
+      child: Container(
+        margin: EdgeInsets.only(right: 16, top: 8, bottom: 18),
+        width: MediaQuery.of(context).size.width * 0.33,
+        // height: MediaQuery.of(context).size.width * 0.3,
+
+        decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(17), boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(.1),
+            blurRadius: 3,
+            spreadRadius: 2,
+          ),
+        ]),
+        child: Column(
+          children: [
+            Expanded(
+                flex: 9,
+                child: Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage(image), fit: BoxFit.cover),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          topRight: Radius.circular(16))),
+                )),
+            Expanded(
+                flex: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(title,
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Text(subtitle,
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.indigo)),
+                      Row(
+                        children: <Widget>[
+                          Spacer(),
+                        ],
+                      ),
+                    ],
+                  ),
+                )),
+            Expanded(
+              flex: 3,
+              child: Container(
+                margin: EdgeInsets.only(left: 8, right: 0, top: 2, bottom: 2),
+                decoration: BoxDecoration(
+                    color: Colors.green[700],
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 6,
+                      )
+                    ]),
+                child: Row(
+                  children: [
+                    Center(
+                      child: RotatedBox(
+                        child: Text(
+                          "Call now",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                        quarterTurns: 4,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
