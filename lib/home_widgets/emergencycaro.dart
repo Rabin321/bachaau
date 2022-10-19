@@ -2,6 +2,7 @@ import 'package:bachaau/home_widgets/emergencies/ambulance.dart';
 import 'package:bachaau/home_widgets/emergencies/police.dart';
 import 'package:bachaau/home_widgets/samplepolice.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 class Emergency extends StatefulWidget {
   const Emergency({super.key});
@@ -11,6 +12,26 @@ class Emergency extends StatefulWidget {
 }
 
 class _EmergencyState extends State<Emergency> {
+// // for calling police(no use)
+//   final TextEditingController _policenoCtrl = TextEditingController();
+//   final TextEditingController _ambulancenoCtrl = TextEditingController();
+//   final TextEditingController firebrigadenoCtrl = TextEditingController();
+// //  final TextEditingController _policenoCtrl = TextEditingController();
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     _policenoCtrl.text = "100";
+//     _ambulancenoCtrl = "54678";
+//     firebrigadenoCtrl = "";
+//   }
+
+// for calling police
+  // _callPolice(String number) async {
+  //   // const number = '100'; //set the number
+  //   await FlutterPhoneDirectCaller.callNumber(number);
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,9 +52,9 @@ class _EmergencyState extends State<Emergency> {
                 'assets/images/police1.jpg',
                 'Nepal Police',
                 '100',
-                () => const SamplePolice(),
+                () => FlutterPhoneDirectCaller.callNumber('1234'),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
 
@@ -60,7 +81,6 @@ class _EmergencyState extends State<Emergency> {
 
 // emergency boxes
 
-//function
 class EmergencyBox extends StatelessWidget {
   final String image;
   final String title;
@@ -68,83 +88,94 @@ class EmergencyBox extends StatelessWidget {
 
   final Function ontapfunction;
 
-  const EmergencyBox(this.image, this.title, this.subtitle, this.ontapfunction);
+  const EmergencyBox(this.image, this.title, this.subtitle, this.ontapfunction,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return ontapfunction();
-        }));
-      },
-      child: Container(
-        margin: EdgeInsets.only(right: 16, top: 8, bottom: 18),
-        width: MediaQuery.of(context).size.width * 0.33,
-        // height: MediaQuery.of(context).size.width * 0.3,
+    // return InkWell(
+    //   onTap: () {
+    //     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+    //       return ontapfunction();
+    //     }));
+    //   },
+    //   child:
+    return Container(
+      margin: const EdgeInsets.only(right: 16, top: 8, bottom: 18),
+      width: MediaQuery.of(context).size.width * 0.33,
+      // height: MediaQuery.of(context).size.width * 0.3,
 
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(17), boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.1),
-            blurRadius: 3,
-            spreadRadius: 2,
-          ),
-        ]),
-        child: Column(
-          children: [
-            Expanded(
-                flex: 9,
-                child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(image), fit: BoxFit.cover),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(16),
-                          topRight: Radius.circular(16))),
-                )),
-            Expanded(
-                flex: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title,
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                          )),
-                      Text(subtitle,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.indigo)),
-                      Row(
-                        children: <Widget>[
-                          Spacer(),
-                        ],
-                      ),
-                    ],
-                  ),
-                )),
-            Expanded(
-              flex: 3,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(17), boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(.1),
+          blurRadius: 3,
+          spreadRadius: 2,
+        ),
+      ]),
+      child: Column(
+        children: [
+          Expanded(
+              flex: 9,
               child: Container(
-                margin: EdgeInsets.only(left: 8, right: 0, top: 2, bottom: 2),
                 decoration: BoxDecoration(
-                    color: Colors.green[700],
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 6,
-                      )
-                    ]),
-                child: Row(
+                    image: DecorationImage(
+                        image: AssetImage(image), fit: BoxFit.cover),
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16))),
+              )),
+          Expanded(
+              flex: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(title,
+                        style: const TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    Text(subtitle,
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.indigo)),
+                    Row(
+                      children: const [
+                        Spacer(),
+                      ],
+                    ),
+                  ],
+                ),
+              )),
+          Expanded(
+            flex: 3,
+            child: Container(
+              margin:
+                  const EdgeInsets.only(left: 8, right: 0, top: 2, bottom: 2),
+              decoration: BoxDecoration(
+                  color: Colors.green[700],
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      blurRadius: 6,
+                    )
+                  ]),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return ontapfunction();
+                  }));
+                },
+                child: Row(
+                  children: const [
                     Center(
                       child: RotatedBox(
+                        quarterTurns: 4,
                         child: Text(
                           "Call now",
                           style: TextStyle(
@@ -152,15 +183,14 @@ class EmergencyBox extends StatelessWidget {
                             fontSize: 18,
                           ),
                         ),
-                        quarterTurns: 4,
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

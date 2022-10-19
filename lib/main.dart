@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
       home: const Home(),
 
       theme: ThemeData(
-        backgroundColor: Colors.green,
         textTheme: GoogleFonts.firaSansTextTheme(
           Theme.of(context).textTheme,
         ),
