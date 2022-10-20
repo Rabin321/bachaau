@@ -1,4 +1,7 @@
+import 'package:bachaau/home_widgets/life_save_options/busstation.dart';
 import 'package:bachaau/home_widgets/life_save_options/hospitals.dart';
+import 'package:bachaau/home_widgets/life_save_options/maaitinepal.dart';
+import 'package:bachaau/home_widgets/life_save_options/pharmacy.dart';
 import 'package:bachaau/home_widgets/life_save_options/policestations.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +20,9 @@ class LiveSave extends StatelessWidget {
         children: const [
           PoliceStation(),
           Hospital(),
+          BusStation(),
+          Pharmacy(),
+          MaaitiNepal(),
         ],
       ),
     );

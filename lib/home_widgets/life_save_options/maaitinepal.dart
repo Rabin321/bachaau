@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class PoliceStation extends StatelessWidget {
-  const PoliceStation({super.key});
+class MaaitiNepal extends StatelessWidget {
+  const MaaitiNepal({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 4.0),
+      padding: const EdgeInsets.only(left: 8.0, right: 12.0),
       child: Column(
         children: [
           Card(
@@ -23,7 +23,7 @@ class PoliceStation extends StatelessWidget {
               width: 60,
               child: Center(
                 child: Image.asset(
-                  "assets/images/policestationlogo1.png",
+                  "assets/images/maitilogo.jpg",
                   height: 45,
                   width: 45,
                 ),
@@ -34,8 +34,8 @@ class PoliceStation extends StatelessWidget {
             height: 5,
           ),
           const Text(
-            "Police Station",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            "Maaiti Nepal",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           )
         ],
       ),

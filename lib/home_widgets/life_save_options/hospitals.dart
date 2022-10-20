@@ -9,7 +9,7 @@ class Hospital extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0),
+      padding: const EdgeInsets.only(left: 8.0, right: 12.0),
       child: Column(
         children: [
           Card(
@@ -23,7 +23,7 @@ class Hospital extends StatelessWidget {
               width: 60,
               child: Center(
                 child: Image.asset(
-                  "assets/images/hospitallogo.jpg",
+                  "assets/images/hospitallogo2.jpg",
                   height: 45,
                   width: 45,
                 ),
@@ -34,8 +34,8 @@ class Hospital extends StatelessWidget {
             height: 5,
           ),
           const Text(
-            "Hospitals",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            "Hospital",
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
           )
         ],
       ),
