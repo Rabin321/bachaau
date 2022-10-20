@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:bachaau/home_widgets/emergencycaro.dart';
+import 'package:bachaau/home_widgets/explorelive.dart';
+import 'package:bachaau/home_widgets/life_save_options/policestations.dart';
 import 'package:bachaau/widgets/customappbar.dart';
 import 'package:bachaau/widgets/customcarousel.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +59,15 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Emergency(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                    child: Text(
+                      "Explore Life Save",
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                  LiveSave()
                 ],
               )),
             ],
