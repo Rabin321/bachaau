@@ -19,7 +19,7 @@ class MaaitiNepal extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              onMapFunction!('Maaiti Nepal');
+              onMapFunction!('Maiti Nepal');
             },
             child: Card(
               color: Colors.white,
@@ -44,7 +44,7 @@ class MaaitiNepal extends StatelessWidget {
             height: 5,
           ),
           const Text(
-            "Maaiti Nepal",
+            "Maiti Nepal",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           )
         ],
