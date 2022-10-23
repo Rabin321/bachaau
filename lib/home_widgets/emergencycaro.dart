@@ -101,6 +101,7 @@ class EmergencyBox extends StatelessWidget {
     //   },
     //   child:
     return Container(
+      // padding: EdgeInsets.only(left: 10),
       margin: const EdgeInsets.only(right: 16, top: 8, bottom: 18),
       width: MediaQuery.of(context).size.width * 0.33,
       // height: MediaQuery.of(context).size.width * 0.3,

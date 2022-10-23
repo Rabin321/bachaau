@@ -16,21 +16,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int qIndex = 0;
+  // int qIndex = 0;
 
-  getRandomQuote() {
-    Random random = Random();
+  // getRandomQuote() {
+  //   Random random = Random();
 
-    setState(() {
-      qIndex = random.nextInt(4);
-    });
-  }
+  //   setState(() {
+  //     qIndex = random.nextInt(4);
+  //   });
+  // }
 
-  @override
-  void initState() {
-    getRandomQuote();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   getRandomQuote();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,11 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               CustomAppBar(
-                  quoteIndex: qIndex,
-                  onTap: () {
-                    getRandomQuote();
-                  }),
+                  // quoteIndex: qIndex,
+                  // onTap: () {
+                  //   getRandomQuote();
+                  // },
+                  ),
               Expanded(
                   child: ListView(
                 shrinkWrap: true,
