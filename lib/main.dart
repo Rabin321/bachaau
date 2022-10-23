@@ -1,8 +1,10 @@
+import 'package:bachaau/drawer/beforehimedrawer.dart';
 import 'package:bachaau/screens/home.dart';
 import 'package:bachaau/screens/onboarding.dart';
 import 'package:bachaau/screens/reigister.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Future<void> main() async {
@@ -25,7 +27,11 @@ class MyApp extends StatelessWidget {
 
       // home: RegisterPage(),
       // home: const OnboardingScreen(), Everything works fine up to verify.(otp aairaxaina)
-      home: const Home(),
+      // before zoom drawer.
+      // home: const Home(),
+
+      // for zoom drawer.
+      home: BeforeHomeDrawer(),
 
       theme: ThemeData(
         textTheme: GoogleFonts.firaSansTextTheme(
