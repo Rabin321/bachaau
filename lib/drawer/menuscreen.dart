@@ -21,14 +21,14 @@ class MenuItems {
 
 class MenuScreen extends StatelessWidget {
   final MenuItemharu currentItem;
-  final ValueChanged<MenuItem> onSelectedItem;
+  final ValueChanged<MenuItemharu> onSelectedItem;
   const MenuScreen(
       {super.key, required this.currentItem, required this.onSelectedItem});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 246, 248),
+      backgroundColor: Color.fromARGB(255, 158, 149, 142),
       body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -48,7 +48,7 @@ class MenuScreen extends StatelessWidget {
         selectedTileColor: Color.fromARGB(255, 194, 182, 182),
         leading: Icon(item.icon),
         title: Text(item.title),
-        onTap: () {},
+        onTap: () => onSelectedItem(item),
       );
 }
 
