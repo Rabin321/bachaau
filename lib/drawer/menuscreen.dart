@@ -28,11 +28,43 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 158, 149, 142),
+      backgroundColor: const Color.fromARGB(255, 158, 149, 142),
       body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Spacer(),
+        Row(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 19.0, top: 40, bottom: 50),
+              child: CircleAvatar(
+                radius: 28,
+                backgroundImage: AssetImage('assets/images/police1.jpg'),
+              ),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Column(
+              children: const [
+                Text(
+                  "Full name",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black),
+                ),
+                Text(
+                  "9876543210",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        // const Spacer(),
         ...MenuItems.all.map(buildMenuItem).toList(),
         const Spacer(flex: 2),
       ])),
@@ -40,12 +72,12 @@ class MenuScreen extends StatelessWidget {
   }
 
   Widget buildMenuItem(MenuItemharu item) => ListTile(
-        selectedColor: Color.fromARGB(255, 1, 155, 6),
+        selectedColor: Colors.white,
         selected: currentItem == item,
         minLeadingWidth: 25,
         iconColor: Colors.black,
         textColor: Colors.black,
-        selectedTileColor: Color.fromARGB(255, 194, 182, 182),
+        // selectedTileColor: Colors.blueGrey.shade100,
         leading: Icon(item.icon),
         title: Text(item.title),
         onTap: () => onSelectedItem(item),

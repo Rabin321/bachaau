@@ -22,15 +22,29 @@ class _BeforeHomeDrawerState extends State<BeforeHomeDrawer> {
       style: DrawerStyle.defaultStyle,
       // moveMenuScreen: false,
       showShadow: true,
-      drawerShadowsBackgroundColor: Colors.blueGrey,
+      drawerShadowsBackgroundColor: Color.fromARGB(255, 78, 97, 107),
       menuBackgroundColor: Color.fromARGB(255, 158, 149, 142),
+
       mainScreenTapClose: true,
+      // shadowLayer1Color: Color.fromARGB(255, 189, 192, 192),
+      // shadowLayer2Color: Color.fromARGB(255, 148, 153, 155),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.shade700,
+          blurRadius: 20,
+          spreadRadius: 5,
+        ),
+      ],
+
       // menuScreenTapClose: true,
       androidCloseOnBackTap: true,
+      menuScreenWidth: MediaQuery.of(context).size.width * 0.46,
+      mainScreenScale: 0.2,
+      angle: 0,
+      dragOffset: 70,
 
-      angle: -10,
-      slideWidth: MediaQuery.of(context).size.width * 0.60,
-      // drawerShadowsBackgroundColor: Colors.white,
+      slideWidth: MediaQuery.of(context).size.width * 0.54,
+      //drawerShadowsBackgroundColor: Colors.white,
       //  mainScreen: const Home(),
       mainScreen: getScreen(),
       menuScreen: Builder(
