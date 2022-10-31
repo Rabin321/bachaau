@@ -7,7 +7,7 @@ class MenuItems {
   static const invite = MenuItemharu('Invite friends', Icons.inventory);
   static const rate = MenuItemharu('Rate app', Icons.rate_review);
   static const aboutus = MenuItemharu('About us', Icons.info);
-  // static const home = MenuItem('Home', Icons.home);
+  static const settings = MenuItemharu('Settings', Icons.settings);
 
   static const all = <MenuItemharu>[
     home,
@@ -16,6 +16,7 @@ class MenuItems {
     invite,
     rate,
     aboutus,
+    settings,
   ];
 }
 
@@ -67,6 +68,43 @@ class MenuScreen extends StatelessWidget {
         // const Spacer(),
         ...MenuItems.all.map(buildMenuItem).toList(),
         const Spacer(flex: 2),
+        Row(
+          children: [
+            InkWell(
+              onTap: (() => print("Logout clicked")),
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0, bottom: 40),
+                  child: Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      // gradient: LinearGradient(
+                      //   colors: [
+                      //     Color.fromARGB(255, 78, 88, 133),
+                      //     Color.fromARGB(255, 100, 101, 126)
+                      //   ],
+                      //   begin: Alignment.topLeft,
+                      //   end: Alignment.bottomRight,
+                      // ),
+                      color: Colors.transparent,
+                      border: Border.all(color: Colors.black, width: 1.3),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      "Log out",
+                      style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1),
+                    )),
+                  ),
+                ),
+              ),
+            )
+          ],
+        )
       ])),
     );
   }
@@ -75,11 +113,15 @@ class MenuScreen extends StatelessWidget {
         selectedColor: Colors.white,
         selected: currentItem == item,
         minLeadingWidth: 25,
+
         iconColor: Colors.black,
         textColor: Colors.black,
         // selectedTileColor: Colors.blueGrey.shade100,
         leading: Icon(item.icon),
-        title: Text(item.title),
+        title: Text(
+          item.title,
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+        ),
         onTap: () => onSelectedItem(item),
       );
 }

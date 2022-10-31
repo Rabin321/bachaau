@@ -22,7 +22,7 @@ class _BeforeHomeDrawerState extends State<BeforeHomeDrawer> {
       style: DrawerStyle.defaultStyle,
       // moveMenuScreen: false,
       showShadow: true,
-      drawerShadowsBackgroundColor: Color.fromARGB(255, 78, 97, 107),
+      drawerShadowsBackgroundColor: Color.fromARGB(255, 59, 89, 104),
       menuBackgroundColor: Color.fromARGB(255, 158, 149, 142),
 
       mainScreenTapClose: true,
@@ -75,6 +75,9 @@ class _BeforeHomeDrawerState extends State<BeforeHomeDrawer> {
         return const Home();
       case MenuItems.aboutus:
         return const AboutUs();
+      case MenuItems.settings:
+        return const Home();
+
       default:
         return const Home();
     }
