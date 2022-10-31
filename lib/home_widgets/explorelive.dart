@@ -3,6 +3,7 @@ import 'package:bachaau/home_widgets/life_save_options/hospitals.dart';
 import 'package:bachaau/home_widgets/life_save_options/maaitinepal.dart';
 import 'package:bachaau/home_widgets/life_save_options/pharmacy.dart';
 import 'package:bachaau/home_widgets/life_save_options/policestations.dart';
+import 'package:bachaau/home_widgets/life_save_options/trafficpolice.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -56,6 +57,9 @@ class LiveSave extends StatelessWidget {
             onMapFunction: openMap,
           ),
           MaaitiNepal(
+            onMapFunction: openMap,
+          ),
+          TrafficPolice(
             onMapFunction: openMap,
           ),
         ],

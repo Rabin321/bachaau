@@ -65,9 +65,19 @@ class MenuScreen extends StatelessWidget {
             ),
           ],
         ),
+        // menus
         // const Spacer(),
         ...MenuItems.all.map(buildMenuItem).toList(),
-        const Spacer(flex: 2),
+
+        // // dark mode on off
+        // Row(
+        //   children: [
+        //     Switch(value: false, onChanged: (value) {}),
+        //   ],
+        // ),
+        const Spacer(flex: 1),
+
+        // Logout button
         Row(
           children: [
             InkWell(

@@ -55,21 +55,37 @@ class _EmergencyState extends State<Emergency> {
                 () => FlutterPhoneDirectCaller.callNumber('1234'),
               ),
               const SizedBox(
-                width: 10,
-              ),
-
-              EmergencyBox(
-                'assets/images/ambulance.png',
-                'Ambulance',
-                '100',
-                () => const SamplePolice(),
+                width: 5,
               ),
 
               EmergencyBox(
                 'assets/images/firebrigade.jpg',
                 'Fire Brigade',
-                '100',
+                '101',
                 () => const SamplePolice(),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+
+              EmergencyBox(
+                'assets/images/ambulance.png',
+                'Ambulance',
+                '102',
+                () => const SamplePolice(),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+
+              EmergencyBox(
+                'assets/images/traffic1.jpg',
+                'Traffic Police',
+                '103',
+                () => const SamplePolice(),
+              ),
+              const SizedBox(
+                width: 5,
               ),
             ],
           ),
