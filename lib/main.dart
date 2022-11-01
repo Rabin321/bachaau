@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       // home: const Home(),
 
       // for zoom drawer.
-//      home: BeforeHomeDrawer(),
+      // home: BeforeHomeDrawer(),
       home: BottomNavBar(),
 
       theme: ThemeData(

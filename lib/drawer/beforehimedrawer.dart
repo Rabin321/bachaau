@@ -1,5 +1,6 @@
 import 'package:bachaau/drawer/drawerscreens/aboutus.dart';
 import 'package:bachaau/drawer/menuscreen.dart';
+import 'package:bachaau/navbar/bottomnavbar.dart';
 import 'package:bachaau/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';

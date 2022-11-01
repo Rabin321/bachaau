@@ -7,6 +7,7 @@ import 'package:bachaau/location/send_location.dart';
 import 'package:bachaau/navbar/bottomnavbar.dart';
 import 'package:bachaau/widgets/customappbar.dart';
 import 'package:bachaau/widgets/customcarousel.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -17,6 +18,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  PageController pageController = PageController();
+  int currentPage = 0;
+
+  @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
+  changePage(int page) {
+    pageController.jumpToPage(page);
+    setState(() {
+      currentPage = page;
+    });
+  }
   // int qIndex = 0;
 
   // getRandomQuote() {
@@ -78,7 +94,31 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      //  bottomNavigationBar: const BottomNavBar(),
+      // bottomNavigationBar: const BottomNavBar(),
+
+      // bottomNavigationBar: CurvedNavigationBar(
+      //   // key: _bottomNavigationKey,
+      //   // index: 0,
+
+      //   height: 50.0,
+      //   items: const <Widget>[
+      //     Icon(Icons.home, size: 25),
+      //     Icon(Icons.contact_phone_rounded, size: 25),
+      //     Icon(Icons.account_circle, size: 25),
+      //     Icon(Icons.shopping_cart, size: 25),
+
+      //     Icon(Icons.menu, size: 25),
+
+      //     // Icon(Icons.perm_identity, size: 30),
+      //   ],
+      //   color: Colors.blueGrey[200]!,
+      //   buttonBackgroundColor: Colors.orange,
+      //   backgroundColor: Colors.transparent,
+      //   animationCurve: Curves.easeInOut,
+      //   animationDuration: const Duration(milliseconds: 300),
+      //   onTap: changePage,
+      //   // letIndexChange: (index) => true,
+      // ),
     );
   }
 }
