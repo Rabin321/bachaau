@@ -1,4 +1,5 @@
 import 'package:bachaau/drawer/beforehimedrawer.dart';
+import 'package:bachaau/navbar/bottomnavbar.dart';
 import 'package:bachaau/screens/home.dart';
 import 'package:bachaau/screens/onboarding.dart';
 import 'package:bachaau/screens/reigister.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
       // home: const Home(),
 
       // for zoom drawer.
-      home: BeforeHomeDrawer(),
+//      home: BeforeHomeDrawer(),
+      home: BottomNavBar(),
 
       theme: ThemeData(
         textTheme: GoogleFonts.firaSansTextTheme(
