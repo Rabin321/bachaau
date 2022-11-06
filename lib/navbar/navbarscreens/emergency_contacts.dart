@@ -14,3 +14,19 @@ class EmergencyContacts extends StatelessWidget {
     );
   }
 }
+
+class Contacts {
+  static final List<String> emcontact = [
+    'Bhaktapur Hospital',
+    'Madhyapur Hospital',
+    "abc",
+    'qwe',
+  ];
+
+  static List<String> getSuggestions(String query) {
+    List<String> matches = [];
+    matches.addAll(emcontact);
+    matches.retainWhere((s) => s.toLowerCase().contains(query.toLowerCase()));
+    return matches;
+  }
+}

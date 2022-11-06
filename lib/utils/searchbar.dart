@@ -99,11 +99,15 @@ class SearchBarWidget extends StatelessWidget with PreferredSizeWidget {
                   // ),
                   suffixIcon: Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
-                      Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            // showSearch(
+                            //     context: context,
+                            //     // delegate to customize the search bar
+                            //     delegate: CustomSearchDelegate());
+                          },
+                          icon: const Icon(Icons.search)),
                       SizedBox(
                         width: 7,
                       )
